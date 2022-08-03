@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package com.hotel.service.availability;
+
+option java_package = "com.hotel.service.availability";
+option java_outer_classname = "HotelItems";
+option java_multiple_files = true;
+
+import "com/hotel/service/common/local_date.proto";
+import "com/hotel/service/common/request_context.proto";
+import "com/hotel/service/common/response_status.proto";
+import "com/hotel/service/common/available_hotel_item.proto";
+
+
+service HotelService{
+    rpc getHotelItem(HotelAvailabilityRequest) returns (HotelAvailabilityResponse) {}
+}
+
+
+message HotelAvailabilityRequest{
+
+  string language_code = 1;
+
+  common.LocalDate start_date = 2;
+
+  common.LocalDate end_date = 3;
+
+  int32 room_count =  4;
+
+  int32 occupancy = 5;
+
+  string country_code = 6;
+
+  repeated double latitude = 7;
+
+  repeated double longitude = 8;
+
+  int32 radius =  9;
+
+  common.Context request_context= 10;
+
+}
+
+message HotelAvailabilityResponse{
+
+  common.ResponseStatus response_status = 1;
+
+  common.AvailableHotelItem hotel_item = 2;
+
+}

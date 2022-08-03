@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.hotel.service.common;
+
+option java_package = "com.hotel.service.common";
+option java_outer_classname = "CommonLocalDate";
+option java_multiple_files = true;
+
+
+message LocalDate {
+  int32 year = 1;
+  uint32 month = 2;
+  uint32 day = 3;
+}

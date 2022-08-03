@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.hotel.service.common;
+
+option java_package = "com.hotel.service.common";
+option java_outer_classname = "ContextType";
+option java_multiple_files = true;
+
+message Context{
+
+  string supplier_requestor_id = 1;
+
+  string supplier_credential = 2;
+
+}
