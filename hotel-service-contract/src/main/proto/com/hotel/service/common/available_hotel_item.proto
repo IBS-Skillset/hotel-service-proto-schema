@@ -20,9 +20,9 @@ message AvailableHotelItem{
 
   string city_code = 5;
 
-  repeated double latitude = 6;
+  double latitude = 6;
 
-  repeated double longitude = 7;
+  double longitude = 7;
 
   double min_price =  8;
 

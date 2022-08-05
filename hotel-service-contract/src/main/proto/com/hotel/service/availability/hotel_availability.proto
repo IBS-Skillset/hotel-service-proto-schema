@@ -31,9 +31,9 @@ message HotelAvailabilityRequest{
 
   string country_code = 6;
 
-  repeated double latitude = 7;
+  double latitude = 7;
 
-  repeated double longitude = 8;
+  double longitude = 8;
 
   int32 radius =  9;
 
@@ -45,6 +45,6 @@ message HotelAvailabilityResponse{
 
   common.ResponseStatus response_status = 1;
 
-  common.AvailableHotelItem hotel_item = 2;
+  repeated common.AvailableHotelItem hotel_item = 2;
 
 }
