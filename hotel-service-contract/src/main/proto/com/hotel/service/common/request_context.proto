@@ -11,4 +11,8 @@ message Context{
 
   string supplier_credential = 2;
 
+  string language_code = 3;
+
+  int32 type = 4;
+
 }
