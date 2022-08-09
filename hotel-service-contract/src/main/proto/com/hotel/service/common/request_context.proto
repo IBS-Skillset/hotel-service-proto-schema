@@ -11,4 +11,6 @@ message Context{
 
   string supplier_credential = 2;
 
+  string supplier_url = 3;
+
 }
