@@ -6,7 +6,6 @@ option java_package = "com.hotel.service.availability";
 option java_outer_classname = "HotelItems";
 option java_multiple_files = true;
 
-import "com/hotel/service/common/local_date.proto";
 import "com/hotel/service/common/request_context.proto";
 import "com/hotel/service/common/response_status.proto";
 import "com/hotel/service/common/available_hotel_item.proto";
@@ -21,9 +20,9 @@ message HotelAvailabilityRequest{
 
   string language_code = 1;
 
-  common.LocalDate start_date = 2;
+  string start_date = 2;
 
-  common.LocalDate end_date = 3;
+  string end_date = 3;
 
   int32 room_count =  4;
 
