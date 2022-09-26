@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package com.hotel.service.description;
+
+option java_package = "com.hotel.service.description";
+option java_outer_classname = "HotelDescription";
+option java_multiple_files = true;
+
+import "com/hotel/service/common/request_context.proto";
+import "com/hotel/service/common/response_status.proto";
+import "com/hotel/service/common/available_hotel_item.proto";
+
+service HotelService{
+  rpc getHotelDescription(HotelDescriptionRequest) returns (HotelDescriptionResponse) {}
+}
+
+message HotelDescriptionRequest{
+
+  string language_code = 1;
+  string start_date = 2;
+  string end_date = 3;
+  string hotel_code = 4;
+  string country_of_residence = 5;
+  common.Context request_context = 6;
+
+}
+
+message HotelDescriptionResponse{
+
+  common.ResponseStatus response_status = 1;
+  repeated Media media = 2;
+  repeated Item item = 3;
+  common.AvailableHotelItem hotel_item = 4;
+
+}
+
+message Media{
+
+  string type = 1;
+  string media_url = 2;
+
+}
+
+message Item {
+
+  string keyword = 1;
+  repeated Line line = 2;
+}
+
+
+message Line {
+
+  repeated string line = 1;
+}
