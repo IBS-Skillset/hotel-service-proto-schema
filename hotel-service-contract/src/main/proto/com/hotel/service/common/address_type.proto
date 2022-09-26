@@ -12,5 +12,6 @@ message Address {
   string zip_code = 3;
   string country_name = 4;
   string country_code = 5;
+  string phone_number = 6;
 
 }
