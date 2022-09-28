@@ -21,7 +21,8 @@ message HotelDescriptionRequest{
   string end_date = 3;
   string hotel_code = 4;
   string country_of_residence = 5;
-  common.Context request_context = 6;
+  string currency_code = 6;
+  common.Context request_context = 7;
 
 }
 
