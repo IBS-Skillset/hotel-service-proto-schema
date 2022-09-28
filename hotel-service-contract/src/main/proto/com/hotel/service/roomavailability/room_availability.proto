@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package com.hotel.service.roomavailability;
+
+option java_package = "com.hotel.service.roomavailability";
+option java_outer_classname = "RoomAvailability";
+option java_multiple_files = true;
+
+import "com/hotel/service/common/request_context.proto";
+import "com/hotel/service/common/response_status.proto";
+
+service HotelService{
+  rpc getRoomAvailability(RoomAvailabilityRequest) returns (RoomAvailabilityResponse) {}
+}
+
+
+message RoomAvailabilityRequest{
+
+  string language_code = 1;
+  string start_date = 2;
+  string end_date = 3;
+  string hotel_code = 4;
+  string home_country_code = 5;
+  string currency_code = 6;
+  int32 nights_needed = 7;
+  int32 room_count = 8;
+  int32 occupancy = 9;
+  common.Context request_context = 10;
+
+}
+
+message RoomAvailabilityResponse{
+
+  common.ResponseStatus response_status = 1;
+  string hotel_code = 2;
+  repeated Rate rate_list = 3;
+
+}
+
+message Rate {
+  string booking_code = 1;
+  string available = 2;
+  string rate_category = 3;
+  double amount = 4;
+  double total_amount = 5;
+  string currency = 6;
+  string rate_plan = 7;
+  string rate_type = 8;
+  bool iscancellable = 9;
+  bool isCVV_required = 10;
+  string hotel_code = 11;
+  repeated RoomDescription room_description_list = 12;
+  repeated BreakFast break_fast_details = 13;
+}
+
+message RoomDescription {
+  string description = 1;
+}
+
+message BreakFast {
+  string breakfast = 1;
+}
