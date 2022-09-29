@@ -10,7 +10,7 @@ import "com/hotel/service/common/request_context.proto";
 import "com/hotel/service/common/response_status.proto";
 import "com/hotel/service/common/available_hotel_item.proto";
 
-service HotelService{
+service HotelDescriptionService{
   rpc getHotelDescription(HotelDescriptionRequest) returns (HotelDescriptionResponse) {}
 }
 
@@ -22,7 +22,8 @@ message HotelDescriptionRequest{
   string hotel_code = 4;
   string country_of_residence = 5;
   string currency_code = 6;
-  common.Context request_context = 7;
+  string hotel_city_code = 7;
+  common.Context request_context = 8;
 
 }
 
