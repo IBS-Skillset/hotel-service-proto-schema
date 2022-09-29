@@ -9,7 +9,7 @@ option java_multiple_files = true;
 import "com/hotel/service/common/request_context.proto";
 import "com/hotel/service/common/response_status.proto";
 
-service HotelService{
+service HotelRoomAvailabilityService{
   rpc getRoomAvailability(RoomAvailabilityRequest) returns (RoomAvailabilityResponse) {}
 }
 
