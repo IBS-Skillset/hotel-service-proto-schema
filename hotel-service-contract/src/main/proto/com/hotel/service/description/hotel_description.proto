@@ -30,27 +30,34 @@ message HotelDescriptionRequest{
 message HotelDescriptionResponse{
 
   common.ResponseStatus response_status = 1;
-  repeated Media media = 2;
-  repeated Item item = 3;
-  common.AvailableHotelItem hotel_item = 4;
+  Media media = 2;
+  common.AvailableHotelItem hotel_item = 3;
+  Descriptions descriptions = 4;
+  Services services = 5;
+  SafetyInfos safety_info = 6;
 
 }
 
 message Media{
 
-  string type = 1;
-  string media_url = 2;
+  repeated string media_url = 1;
 
 }
 
-message Item {
+message Descriptions {
 
-  string keyword = 1;
-  repeated Line line = 2;
+  repeated string decription = 1;
+
 }
 
+message Services {
 
-message Line {
+  repeated string service = 1;
 
-  repeated string line = 1;
+}
+
+message SafetyInfos {
+
+  repeated string safety_info = 1;
+
 }
