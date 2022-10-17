@@ -51,6 +51,7 @@ message Rate {
   string hotel_code = 11;
   repeated RoomDescription room_description_list = 12;
   repeated BreakFast break_fast_details = 13;
+  string is_breakfast_included = 14;
 }
 
 message RoomDescription {
