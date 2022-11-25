@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package com.hotel.service.book;
+
+option java_package = "com.hotel.service.book";
+option java_outer_classname = "HotelBook";
+option java_multiple_files = true;
+
+import "com/hotel/service/common/request_context.proto";
+import "com/hotel/service/common/response_status.proto";
+import "com/hotel/service/common/address_type.proto";
+import "com/hotel/service/common/user_info.proto";
+import "com/hotel/service/common/pnr_info.proto";
+
+
+
+service HotelBookService{
+  rpc getHotelBook(HotelBookRequest) returns (HotelBookResponse) {}
+}
+
+message HotelBookRequest{
+
+  string language_code = 1;
+  string rate_plan_id = 2;
+  string start_date = 3;
+  string end_date = 4;
+  string hotel_code = 5;
+  int32 room_count = 6;
+  int32 guest_count = 7;
+  PaymentInfo payment_info = 8;
+  common.UserInfo user_info= 9;
+  common.Address address= 10;
+  common.Context request_context= 11;
+}
+
+message PaymentInfo{
+
+  string payment_type = 1;
+  string card_type = 2;
+  string card_number = 3;
+  string cvv = 4;
+  string card_expire_date = 5;
+  string card_holder_name = 6;
+
+}
+
+message HotelBookResponse{
+
+  common.ResponseStatus response_status = 1;
+  common.PnrInfo pnr_info = 2;
+  string start_date = 3;
+  string end_date = 4;
+  string hotel_code = 5;
+  string hotel_name = 6;
+  common.Address hotel_address= 7;
+  string rate_plan_id = 8;
+  RoomRate room_rate = 9;
+  string rate_description = 10;
+
+
+}
+
+message RoomRate{
+
+  float total_amount = 1;
+  string currency_code = 2;
+
+}

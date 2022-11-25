@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.hotel.service.common;
+
+option java_package = "com.hotel.service.common";
+option java_outer_classname = "PnrInfoType";
+option java_multiple_files = true;
+
+message PnrInfo {
+
+  string booking_code = 1;
+  string booking_description = 2;
+  string booking_state = 3;
+  string confirmation_number = 4; // mapped with Res Source Context value BKG
+
+}
