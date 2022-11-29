@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.hotel.service.raterule;
+
+option java_package = "com.hotel.service.raterule";
+option java_outer_classname = "HotelRateRule";
+option java_multiple_files = true;
+
+import "com/hotel/service/common/request_context.proto";
+import "com/hotel/service/common/response_status.proto";
+
+service HotelRateRuleService{
+  rpc getHotelRateRule(HotelRateRuleRequest) returns (HotelRateRuleResponse) {}
+}
+
+message HotelRateRuleRequest {
+
+  string language_code = 1;
+  string start_date = 2;
+  string end_date = 3;
+  string hotel_code = 4;
+  string rate_plan_id = 5;
+  int32 room_count = 6;
+  common.Context request_context = 7;
+}
+
+message HotelRateRuleResponse {
+  common.ResponseStatus response_status = 1;
+  string hotel_code = 2;
+  string rate_plan_id = 3;
+  string currency_code = 4;
+  string penalty_description_text = 5;
+  string cancel_policy_deadLine = 6;
+
+}
+
