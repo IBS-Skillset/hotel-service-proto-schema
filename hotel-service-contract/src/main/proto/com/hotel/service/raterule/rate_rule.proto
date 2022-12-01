@@ -28,9 +28,10 @@ message HotelRateRuleResponse {
   common.ResponseStatus response_status = 1;
   string hotel_code = 2;
   string rate_plan_id = 3;
-  string currency_code = 4;
-  string penalty_description_text = 5;
-  string cancel_policy_deadLine = 6;
+  string amount = 4;
+  string currency_code = 5;
+  string penalty_description_text = 6;
+  string cancel_policy_deadLine = 7;
 
 }
 
