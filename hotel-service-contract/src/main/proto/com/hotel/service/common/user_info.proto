@@ -5,6 +5,8 @@ option java_package = "com.hotel.service.common";
 option java_outer_classname = "UserInfoType";
 option java_multiple_files = true;
 
+import "com/hotel/service/common/address_type.proto";
+
 message UserInfo {
 
   string name_prefix = 1;
@@ -12,5 +14,6 @@ message UserInfo {
   string last_name = 3;
   string phone_number = 4;
   string email = 5;
+  Address address= 6;
 
 }

@@ -29,8 +29,7 @@ message HotelBookRequest{
   int32 guest_count = 7;
   PaymentInfo payment_info = 8;
   common.UserInfo user_info= 9;
-  common.Address address= 10;
-  common.Context request_context= 11;
+  common.Context request_context= 10;
 }
 
 message PaymentInfo{
