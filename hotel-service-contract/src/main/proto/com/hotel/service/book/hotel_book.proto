@@ -63,5 +63,6 @@ message RoomRate{
 
   float total_amount = 1;
   string currency_code = 2;
+  string rate_description = 3;
 
 }
