@@ -32,6 +32,8 @@ message HotelRateRuleResponse {
   string currency_code = 5;
   string penalty_description_text = 6;
   string cancel_policy_deadLine = 7;
+  bool iscancellable = 8;
+  bool is_breakfast_included = 9;
 
 }
 
