@@ -46,12 +46,12 @@ message Rate {
   string currency = 6;
   string rate_plan = 7;
   string rate_type = 8;
-  bool iscancellable = 9;
+  bool is_cancellable = 9;
   bool isCVV_required = 10;
   string hotel_code = 11;
   repeated RoomDescription room_description_list = 12;
   repeated BreakFast break_fast_details = 13;
-  string is_breakfast_included = 14;
+  bool is_breakfast_included = 14;
 }
 
 message RoomDescription {
