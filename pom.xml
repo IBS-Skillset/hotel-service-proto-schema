@@ -58,6 +58,13 @@
     </dependency>
   </dependencies>
 
+  <distributionManagement>
+    <repository>
+      <id>ibsplc-hotel-service-contract</id>
+      <name>ibsplc-hotel-service-contract</name>
+      <url>https://ibsplc-306472407007.d.codeartifact.ap-south-1.amazonaws.com/maven/hotel-service-contract/</url>
+    </repository>
+  </distributionManagement>
   <build>
     <sourceDirectory>hotel-service-proto-schema/src/main/proto</sourceDirectory>
     <extensions>

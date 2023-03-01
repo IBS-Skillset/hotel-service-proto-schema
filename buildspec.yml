@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+
+  pre_build:
+    commands:
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ibsplc --domain-owner ${AWS_ACCOUNT_ID} --region ${AWS_DEFAULT_REGION} --query authorizationToken --output text`
+  build:
+    commands:
+      - mvn -s settings.xml clean package deploy
